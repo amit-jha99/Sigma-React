@@ -1,5 +1,5 @@
 const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
+  React.createElement("div", { id: "child 1" }, [
     React.createElement(
       "h1",
       { id: "heading" },
@@ -11,7 +11,7 @@ const parent = React.createElement("div", { id: "parent" }, [
       "Hello I am a heading h2 inside nested elements"
     ),
   ]),
-  React.createElement("div", { id: "child" }, [
+  React.createElement("div", { id: "child 2" }, [
     React.createElement(
       "h1",
       { id: "heading" },
