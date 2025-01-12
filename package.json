@@ -1,0 +1,27 @@
+{
+  "name": "sigmareact",
+  "version": "1.0.0",
+  "description": "This is Sigma-React",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amit-jha99/Sigma-React.git"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "sigma-react"
+  ],
+  "author": "Amit Jha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amit-jha99/Sigma-React/issues"
+  },
+  "homepage": "https://github.com/amit-jha99/Sigma-React#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}
