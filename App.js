@@ -1,9 +1,12 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const parent = React.createElement("div", { id: "parent" }, [
   React.createElement("div", { id: "child 1" }, [
     React.createElement(
       "h1",
       { id: "heading" },
-      "Hello I am a heading inside nested elements"
+      "Escape the Matrix..."
     ),
     React.createElement(
       "h2",
