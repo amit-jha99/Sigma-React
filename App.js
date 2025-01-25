@@ -39,6 +39,14 @@ const Header  = ()=>{
   )
 }
 
+const Body = ()=>{
+  return(
+    <div className="body">
+
+    </div>
+  )
+}
+
 const AppLayout = ()=>{
   return (
     <div className="app">
