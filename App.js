@@ -42,9 +42,7 @@ const Header  = ()=>{
 const AppLayout = ()=>{
   return (
     <div className="app">
-    //Header 
-    //Body 
-    //Footer
+   <Header />
 
     </div>
   )
@@ -53,4 +51,4 @@ const AppLayout = ()=>{
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(heading);
-root.render(<HeadingComponent />);
+root.render(<AppLayout />);
