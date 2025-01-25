@@ -1,3 +1,17 @@
-#heading{
-    color :red;
+.header{
+    display: flex;
+}
+
+.logo{
+    width: 200px;
+}
+
+.nav-items >ul{
+    display: flex;
+    
+}
+
+.nav-items>ul>li{
+   margin: 10px;
+   padding:10px;
 }
