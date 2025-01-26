@@ -47,30 +47,47 @@ const styleCard = {
   backgroundColor: "#f0f0f0",
 };
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+  const {resData} = props
+  // console.log(props);
   return (
     <div className="res-card" style={styleCard}>
-      <img className="res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/o6prrzzimmmnsgeuxf73" alt="res-menu" />
-      <h3>Meghana Foods</h3>
-      <h4>Biryani, North Indian,Asian</h4>
-      <h4>4.5 star</h4>
-      <h4>30 minutes</h4>
+      <img
+        className="res-logo"
+        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/o6prrzzimmmnsgeuxf73"
+        alt="res-menu"
+      />
+      <h3>{resData.Restaurant_Name}</h3>
+      <h4>{resData.City}</h4>
+      <h4>{resData.Address}</h4>
+      <h4>{resData.Ratings_for_Swiggy}</h4>
     </div>
   );
 };
+
+const resObj = {
+  "Restaurant_Name": "Sample Restaurant 1",
+  "URL": "https://www.sample-restaurant1.com",
+  "Timing": "10:00 AM - 10:00 PM",
+  "Address": "123 Main Street, Sample City",
+  "Location": "Sample Location",
+  "City": "Sample City",
+  "Offer": "10% off on orders over $50",
+  "Contact_Number": "+1 123-456-7890",
+  "Cost_for_two": 40,
+  "Restaurant_Type": "Cuisine Type 1",
+  "Ratings_for_Swiggy": 4.5
+}
 const Body = () => {
   return (
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
         {/* //Restaurantcard  a Seperate component */}
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
+        <RestaurantCard
+           resData={resObj}
+        />
+       
       </div>
     </div>
   );
