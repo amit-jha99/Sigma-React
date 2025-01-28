@@ -48,46 +48,112 @@ const styleCard = {
 };
 
 const RestaurantCard = (props) => {
-  const {resData} = props
+  const { resData } = props;
   // console.log(props);
   return (
     <div className="res-card" style={styleCard}>
       <img
         className="res-logo"
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/o6prrzzimmmnsgeuxf73"
+        src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+resData.info.cloudinaryImageId}
         alt="res-menu"
       />
-      <h3>{resData.Restaurant_Name}</h3>
-      <h4>{resData.City}</h4>
-      <h4>{resData.Address}</h4>
-      <h4>{resData.Ratings_for_Swiggy}</h4>
+      <h3>{resData.info.name}</h3>
+      <h4>{resData.info.cuisines.join(",")}</h4>
+      <h4>{resData.info.avgRating}</h4>
+      <h4>{resData.info.costForTwo}</h4>
+      <h4>{resData.info.deliveryTime}</h4>
     </div>
   );
 };
 
 const resObj = {
-  "Restaurant_Name": "Sample Restaurant 1",
-  "URL": "https://www.sample-restaurant1.com",
-  "Timing": "10:00 AM - 10:00 PM",
-  "Address": "123 Main Street, Sample City",
-  "Location": "Sample Location",
-  "City": "Sample City",
-  "Offer": "10% off on orders over $50",
-  "Contact_Number": "+1 123-456-7890",
-  "Cost_for_two": 40,
-  "Restaurant_Type": "Cuisine Type 1",
-  "Ratings_for_Swiggy": 4.5
-}
+  info: {
+    id: "9866",
+    name: "Pizza Hut",
+    cloudinaryImageId:
+      "RX_THUMBNAIL/IMAGES/VENDOR/2024/7/16/1625d09a-2bfa-49c0-8797-780c096367f1_9866.jpg",
+    locality: "Thakur Village",
+    areaName: "Kandivali East",
+    costForTwo: "₹300 for two",
+    cuisines: ["Pizzas"],
+    avgRating: 4.3,
+    parentId: "721",
+    avgRatingString: "4.3",
+    totalRatingsString: "11K+",
+    sla: {
+      deliveryTime: 28,
+      lastMileTravel: 0.7,
+      serviceability: "SERVICEABLE",
+      slaString: "25-30 mins",
+      lastMileTravelString: "0.7 km",
+      iconType: "ICON_TYPE_EMPTY",
+    },
+    availability: {
+      nextCloseTime: "2025-01-29 05:00:00",
+      opened: true,
+    },
+    badges: {
+      imageBadges: [
+        {
+          imageId: "Rxawards/_CATEGORY-Pizza.png",
+          description: "Delivery!",
+        },
+      ],
+    },
+    isOpen: true,
+    aggregatedDiscountInfoV2: {},
+    type: "F",
+    badgesV2: {
+      entityBadges: {
+        imageBased: {
+          badgeObject: [
+            {
+              attributes: {
+                description: "Delivery!",
+                imageId: "Rxawards/_CATEGORY-Pizza.png",
+              },
+            },
+          ],
+        },
+        textBased: {},
+        textExtendedBadges: {},
+      },
+    },
+    differentiatedUi: {
+      displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      differentiatedUiMediaDetails: {
+        lottie: {},
+        video: {},
+      },
+    },
+    reviewsSummary: {},
+    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    restaurantOfferPresentationInfo: {},
+    externalRatings: {
+      aggregatedRating: {
+        rating: "4.0",
+        ratingCount: "1.6K+",
+      },
+      source: "GOOGLE",
+      sourceIconImageId: "v1704440323/google_ratings/rating_google_tag",
+    },
+    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+  },
+  analytics: {
+    context: "seo-data-169ca548-1c34-4fe5-9d5d-6783dfbcc892",
+  },
+  cta: {
+    link: "https://www.swiggy.com/city/mumbai/pizza-hut-thakur-village-kandivali-east-rest9866",
+    type: "WEBLINK",
+  },
+};
 const Body = () => {
   return (
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
         {/* //Restaurantcard  a Seperate component */}
-        <RestaurantCard
-           resData={resObj}
-        />
-       
+        <RestaurantCard resData={resObj} />
       </div>
     </div>
   );
