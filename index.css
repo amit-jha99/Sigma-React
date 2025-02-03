@@ -98,3 +98,12 @@
     
     
 }
+
+
+.filter-btn{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
