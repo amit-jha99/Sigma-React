@@ -1,5 +1,6 @@
 // not using keys(not acceptable) <<<<index as key <<<<<< unique id (best practice)
 import RestaurantCard from "./RestaurantCard";
+import resList from "../utils/mockData";
 
 
 const Body = () => {
