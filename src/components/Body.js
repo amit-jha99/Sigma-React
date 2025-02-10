@@ -1,28 +1,38 @@
 // not using keys(not acceptable) <<<<index as key <<<<<< unique id (best practice)
 import RestaurantCard from "./RestaurantCard";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import resList from "../utils/mockData";
 
 const Body = () => {
-    //local state variable ->super powerful variable
-    const[listOfRestaurants,setlistOfRestaurants] = useState(resList);
-    //useEffect takes two arguments first is the arrow function and second is dependency array
-    useEffect(()=>{
-        console.log("useEffect called");
-    },[])
-  
-  return (  
+  //local state variable ->super powerful variable
+  const [listOfRestaurants, setlistOfRestaurants] = useState(resList);
+  //useEffect takes two arguments first is the arrow function and second is dependency array
+  useEffect(() => {
+    console.log("useEffect called");
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2107021&lng=72.8699379&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    console.log(json);
+  };
+
+//   console.log("Body rendered");
+
+  return (
     <div className="body">
       <div className="filter">
         <button
           className="filter-btn"
           onClick={() => {
-            
             // Filter restaurant here
-           filteredList = listOfRestaurants.filter(
+            filteredList = listOfRestaurants.filter(
               (restaurant) => restaurant.info.avgRating > 4.5
             );
-            setlistOfRestaurants(filteredList)
+            setlistOfRestaurants(filteredList);
             // console.log(listOfRestaurants);
           }}
         >
