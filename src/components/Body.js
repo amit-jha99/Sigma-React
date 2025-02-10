@@ -19,7 +19,8 @@ const Body = () => {
     const json = await data.json();
     console.log(json);
    
-    setlistOfRestaurants(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+    //optional chaining 
+    setlistOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
 
 //   console.log("Body rendered");
