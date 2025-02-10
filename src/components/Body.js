@@ -7,7 +7,9 @@ const Body = () => {
     //local state variable ->super powerful variable
     const[listOfRestaurants,setlistOfRestaurants] = useState(resList);
     //useEffect takes two arguments first is the arrow function and second is dependency array
-    useEffect(()=>{},[])
+    useEffect(()=>{
+        console.log("useEffect called");
+    },[])
   
   return (  
     <div className="body">
