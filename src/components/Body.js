@@ -1,11 +1,11 @@
 // not using keys(not acceptable) <<<<index as key <<<<<< unique id (best practice)
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
-import resList from "../utils/mockData";
+
 
 const Body = () => {
   //local state variable ->super powerful variable
-  const [listOfRestaurants, setlistOfRestaurants] = useState(resList);
+  const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   //useEffect takes two arguments first is the arrow function and second is dependency array
   useEffect(() => {
     console.log("useEffect called");
@@ -18,6 +18,8 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
+   
+    setlistOfRestaurants(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
   };
 
 //   console.log("Body rendered");
