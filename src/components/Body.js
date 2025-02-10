@@ -1,13 +1,15 @@
 // not using keys(not acceptable) <<<<index as key <<<<<< unique id (best practice)
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import resList from "../utils/mockData";
 
 const Body = () => {
     //local state variable ->super powerful variable
     const[listOfRestaurants,setlistOfRestaurants] = useState(resList);
+    //useEffect takes two arguments first is the arrow function and second is dependency array
+    useEffect(()=>{},[])
   
-  return (
+  return (  
     <div className="body">
       <div className="filter">
         <button
