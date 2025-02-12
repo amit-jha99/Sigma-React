@@ -3,7 +3,6 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 
-
 const Body = () => {
   //local state variable ->super powerful variable
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
@@ -19,16 +18,17 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
-   
-    //optional chaining 
-    setlistOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+    //optional chaining
+    setlistOfRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
-//   console.log("Body rendered");
-    if(listOfRestaurants.length === 0){
-        return <Shimmer />
-    }
-  return (
+  //conditional rendering and we have used ternary operator
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <button
