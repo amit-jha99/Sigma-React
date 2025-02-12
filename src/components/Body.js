@@ -1,6 +1,7 @@
 // not using keys(not acceptable) <<<<index as key <<<<<< unique id (best practice)
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 
 const Body = () => {
@@ -25,7 +26,7 @@ const Body = () => {
 
 //   console.log("Body rendered");
     if(listOfRestaurants.length === 0){
-        return <h1>Loading...</h1>
+        return <Shimmer />
     }
   return (
     <div className="body">
