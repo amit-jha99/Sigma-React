@@ -3,7 +3,8 @@ import { LOGO_URL } from "../utils/constants";
 const Header = () => {
 
   // let btnName = "Login";
-  let [btnName,setbtnName] = useState("Login")
+  const [btnName,setbtnName] = useState("Login")
+  console.log("Header Rendered");
     return (
       
       <div className="header">
@@ -21,7 +22,7 @@ const Header = () => {
             <li>Contact us</li>
             <li>Cart</li>
             <button className="login-btn" onClick={()=>{
-            setbtnName(  btnName === "Login" ? btnName = "Logout" : btnName = "Login");
+            btnName === "Login"?setbtnName("Logout"):setbtnName("Login");
               console.log(btnName);
             }}>{btnName}</button>
           </ul>
