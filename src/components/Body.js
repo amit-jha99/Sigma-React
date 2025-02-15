@@ -6,6 +6,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   //local state variable ->super powerful variable
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
+  const [filteredRestaurant,setFilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
   //useEffect takes two arguments first is the arrow function and second is dependency array
@@ -26,6 +27,7 @@ const Body = () => {
     setlistOfRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
 
   //conditional rendering and we have used ternary operator
@@ -53,7 +55,7 @@ const Body = () => {
              const filteredRestaurant= listOfRestaurants.filter((res)=>{
                 return res.info.name.toLowerCase().includes(searchText.toLowerCase());
               })
-              setlistOfRestaurants(filteredRestaurant);
+              setFilteredRestaurant(filteredRestaurant);
             }}
           >
             Search
@@ -76,7 +78,7 @@ const Body = () => {
       <div className="res-container">
         {/* //Restaurantcard  a Seperate component */}
         {/* <RestaurantCard resData={resList[1]} /> */}
-        {listOfRestaurants.map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
