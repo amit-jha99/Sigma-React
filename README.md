@@ -59,3 +59,10 @@ Two types of Export/Import
  - useEffect()
  
  # Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
+
+if no dependecny array useEffect will be called on every render.
+if dependency array is empty => [] => useEffect will be called only once(on initial render)
+if dependency array has some value => [btnName] => useEffect will be called whenever the value of btnName changes.
+
+Never create state variable outside of your component and inside if else condition,for loops , functions.
+RouterProvider actually provide configuration to our app

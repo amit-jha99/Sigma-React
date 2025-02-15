@@ -2,10 +2,9 @@
   "name": "sigmareact",
   "version": "1.0.0",
   "description": "This is Sigma-React",
-  
   "scripts": {
-    "start":"parcel index.html",
-    "build":"parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -29,11 +28,10 @@
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^6.29.0"
   },
   "browserslist": [
     "last 2  versions"
-    
-    
   ]
 }

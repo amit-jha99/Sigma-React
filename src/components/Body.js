@@ -12,9 +12,9 @@ const Body = () => {
   //useEffect takes two arguments first is the arrow function and second is dependency array
   console.log("Body Rendered");
   useEffect(() => {
-    console.log("useEffect called");
+    // console.log("useEffect called");
     fetchData();
-  }, []);
+  },[]);
 
   const fetchData = async () => {
     const data = await fetch(
