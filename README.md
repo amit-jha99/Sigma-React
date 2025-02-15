@@ -57,3 +57,5 @@ Two types of Export/Import
 (Normal JS utility functions)
  - useState() -> Superpowerful State Variables in react
  - useEffect()
+ 
+ # Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)

@@ -6,7 +6,10 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   //local state variable ->super powerful variable
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
+
+  const [searchText, setSearchText] = useState("");
   //useEffect takes two arguments first is the arrow function and second is dependency array
+  console.log("Body Rendered");
   useEffect(() => {
     console.log("useEffect called");
     fetchData();
@@ -31,6 +34,27 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            placeholder="Search Restaurants"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+              // console.log(searchText);
+            }}
+          />
+          <button
+            onClick={() => {
+              //Filter the restaurant and update the UI.
+              // SearchText
+              console.log(searchText);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {

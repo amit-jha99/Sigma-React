@@ -130,3 +130,7 @@
     background-color: #f8f8f8;
     cursor: pointer;
 }
+
+.filter{
+    display: flex;
+}
