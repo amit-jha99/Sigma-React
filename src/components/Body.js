@@ -49,7 +49,11 @@ const Body = () => {
             onClick={() => {
               //Filter the restaurant and update the UI.
               // SearchText
-              console.log(searchText);
+              // console.log(searchText);
+             const filteredRestaurant= listOfRestaurants.filter((res)=>{
+                return res.info.name.includes(searchText);
+              })
+              setlistOfRestaurants(filteredRestaurant);
             }}
           >
             Search
