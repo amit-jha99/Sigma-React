@@ -66,3 +66,8 @@ if dependency array has some value => [btnName] => useEffect will be called when
 
 Never create state variable outside of your component and inside if else condition,for loops , functions.
 RouterProvider actually provide configuration to our app
+
+
+# 2 types Routing in web apps
+- Client side routing
+- Server side routing(make the network call fetch the /about.html from  the  server refreshes the whole page)
