@@ -1,10 +1,15 @@
 import React from "react";
 class UserClass extends React.Component {
+
+    constructor(props) {
+        super(props);
+        console.log(props);
+    }
   render() {
     return (
       <div className="user-card">
-        <h2>Name : Amit Jha</h2>
-        <h3>Location:Mumbai(mayanagri)</h3>
+        <h2>Name : {this.props.name}</h2>
+        <h3>Location:{this.props.location}</h3>
         <h4>contact :@AmitJha101</h4>
       </div>
     );
