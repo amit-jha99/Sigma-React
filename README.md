@@ -71,3 +71,24 @@ RouterProvider actually provide configuration to our app
 # 2 types Routing in web apps
 - Client side routing
 - Server side routing(make the network call fetch the /about.html from  the  server refreshes the whole page)
+
+
+# React life Cycle
+
+- Parent Constructor
+- Parent Render
+
+  - First constructor
+  - First Render
+
+  - Second Constructor
+  - Second Render
+
+  <DOM UPDATED - IN SINGLE BATCH></DOM>
+  - First ComponentDidmount
+
+  - Second ComponentDidMount
+
+- Parent ComponentDidMount
+
+by doing this react is optimising the performance

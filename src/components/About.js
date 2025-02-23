@@ -8,6 +8,10 @@ class About extends React.Component{
 
         console.log("Parent Constructor");
     }
+
+    componentDidMount(){
+        console.log("Parent component Did mount");
+      }
     render(){
         console.log("Parent render");
         return(
@@ -16,7 +20,9 @@ class About extends React.Component{
             <h1>About Us</h1>
             <h2>Escape the Matrix</h2>
             
-            <UserClass name ={"The Undertaker"}location={"Mumbai"}/>
+            <UserClass name ={"First "}location={"Mumbai"}/>
+            <UserClass name ={"Second"}location={"United States of America"}/>
+            <UserClass name ={"Third"}location={"Japan"}/>
             </div>
         )
     }
