@@ -4,32 +4,42 @@ class UserClass extends React.Component {
     super(props);
     console.log(props);
     this.state = {
-      count: 0,
-      count2: 2,
+      userInfo:{
+        name:"The Champ",
+        location:"Mumbai",
+        avatar_url:"https://www.dummyphoto.com"
+      }
     };
-    console.log(this.props.name +" child Construtor");
+    // console.log(this.props.name + " child Construtor");
   }
 
+  async componentDidMount() {
+    // console.log(this.props.name + "Child component Did mount");
+    const data = await fetch("https://api.github.com/users/amit-jha99");
+    const json = await data.json();
+    console.log(json);
+    this.setState({
+      userInfo:json,
+    });
+  }
 
-  componentDidMount(){
-    console.log(this.props.name + "Child component Did mount");
+  componentDidUpdate(){
+    console.log("ComponentDidUpdate");
+  }
+
+  componentWillUnmount(){
+    console.log("component will unmount");
   }
   render() {
-    const { name, location } = this.props;
-    const { count } = this.state;
-    console.log(this.props.name + "child render");
+    
+
+    // console.log(this.props.name + "child render");
+    
     return (
       <div className="user-card">
-        <h1>count1:{count}</h1>
-        <button onClick={()=>{
-            //Never update state variable directly
-            this.setState({
-                count: this.state.count+1,
-            });
-        }}>countIncrease</button>
-
-        <h2>Name : {name}</h2>
-        <h3>Location:{location}</h3>
+      <img src={this.state.userInfo.avatar_url} />
+        <h2>Name : {this.state.userInfo.name}</h2>
+        <h3>Location:{this.state.userInfo.location}</h3>
         <h4>contact :@AmitJha101</h4>
       </div>
     );

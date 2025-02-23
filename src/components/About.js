@@ -6,14 +6,14 @@ class About extends React.Component{
     constructor(props){
         super(props)
 
-        console.log("Parent Constructor");
+        // console.log("Parent Constructor");
     }
 
     componentDidMount(){
-        console.log("Parent component Did mount");
+        // console.log("Parent component Did mount");
       }
     render(){
-        console.log("Parent render");
+        // console.log("Parent render");
         return(
             
             <div>
@@ -21,8 +21,7 @@ class About extends React.Component{
             <h2>Escape the Matrix</h2>
             
             <UserClass name ={"First "}location={"Mumbai"}/>
-            <UserClass name ={"Second"}location={"United States of America"}/>
-            <UserClass name ={"Third"}location={"Japan"}/>
+            
             </div>
         )
     }
