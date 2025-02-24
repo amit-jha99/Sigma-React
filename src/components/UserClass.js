@@ -13,14 +13,17 @@ class UserClass extends React.Component {
     // console.log(this.props.name + " child Construtor");
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     // console.log(this.props.name + "Child component Did mount");
-    const data = await fetch("https://api.github.com/users/amit-jha99");
-    const json = await data.json();
-    console.log(json);
-    this.setState({
-      userInfo:json,
-    });
+    // const data = await fetch("https://api.github.com/users/amit-jha99");
+    // const json = await data.json();
+    // console.log(json);
+    // this.setState({
+    //   userInfo:json,
+    // });
+    this.timer = setInterval(()=>{
+        console.log("Escape the Matrix");
+    },1000)
   }
 
   componentDidUpdate(){
@@ -28,6 +31,7 @@ class UserClass extends React.Component {
   }
 
   componentWillUnmount(){
+    clearInterval(this.timer)
     console.log("component will unmount");
   }
   render() {
