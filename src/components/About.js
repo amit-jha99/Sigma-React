@@ -20,7 +20,10 @@ class About extends React.Component{
             <h1>About Us</h1>
             <h2>Escape the Matrix</h2>
             
-            <UserClass name ={"First "}location={"Mumbai"}/>
+            {/* <UserClass name ={"First "}location={"Mumbai"}/> */}
+            <User/>
+            
+          
             
             </div>
         )
