@@ -92,3 +92,11 @@ RouterProvider actually provide configuration to our app
 - Parent ComponentDidMount
 
 by doing this react is optimising the performance
+
+# important terms
+(i) chunking
+(ii) Code Splitting
+(iii) Dynamic Bundling
+(iv) lazy loading
+(v) on demand loading
+(vi) Dynamix import
