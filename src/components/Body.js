@@ -12,7 +12,7 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
   //useEffect takes two arguments first is the arrow function and second is dependency array
-  console.log("Body Rendered");
+  console.log("Body Rendered",listOfRestaurants);
   useEffect(() => {
     // console.log("useEffect called");
     fetchData();
