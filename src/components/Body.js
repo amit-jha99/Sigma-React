@@ -1,5 +1,5 @@
 // not using keys(not acceptable) <<<<index as key <<<<<< unique id (best practice)
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard ,{withPromotedLabel}from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -11,6 +11,8 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
   //useEffect takes two arguments first is the arrow function and second is dependency array
   console.log("Body Rendered",listOfRestaurants);
   useEffect(() => {
