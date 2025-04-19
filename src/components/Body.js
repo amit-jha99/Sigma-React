@@ -1,5 +1,5 @@
 // not using keys(not acceptable) <<<<index as key <<<<<< unique id (best practice)
-import RestaurantCard ,{withPromotedLabel}from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ const Body = () => {
 
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
   //useEffect takes two arguments first is the arrow function and second is dependency array
-  console.log("Body Rendered",listOfRestaurants);
+  console.log("Body Rendered", listOfRestaurants);
   useEffect(() => {
     // console.log("useEffect called");
     fetchData();
@@ -62,7 +62,8 @@ const Body = () => {
               // console.log(searchText);
             }}
           />
-          <button className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+          <button
+            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               //Filter the restaurant and update the UI.
               // SearchText
@@ -80,21 +81,20 @@ const Body = () => {
         </div>
 
         <div className="search m-4 p-4 flex items-center">
-        <button
-          className="px-4 py-2 bg-gray-100"
-          onClick={() => {
-            // Filter restaurant here
-            filteredList = listOfRestaurants.filter(
-              (restaurant) => restaurant.info.avgRating > 4.5
-            );
-            setlistOfRestaurants(filteredList);
-            // console.log(listOfRestaurants);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+          <button
+            className="px-4 py-2 bg-gray-100"
+            onClick={() => {
+              // Filter restaurant here
+              filteredList = listOfRestaurants.filter(
+                (restaurant) => restaurant.info.avgRating > 4.5
+              );
+              setlistOfRestaurants(filteredList);
+              // console.log(listOfRestaurants);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
         </div>
-        
       </div>
       <div className="flex flex-wrap">
         {/* //Restaurantcard  a Seperate component */}
@@ -104,7 +104,12 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.promoted ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
+            {/* <RestaurantCard resData={restaurant} /> */}
           </Link>
         ))}
       </div>
