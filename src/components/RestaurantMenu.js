@@ -29,24 +29,12 @@ const RestaurantMenu = () => {
   console.log(categories);
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <h3>
+    <div className="text-center">
+      <h1 className = "font-bold my-10 text-2xl">{name}</h1>
+      <p>
         {cuisines.join(",")} - {costForTwoMessage}
-      </h3>
-      <h3></h3>
-      <h2>Menu</h2>
-      {itemCards?.length > 0 && (
-  <ul>
-    {itemCards.map((item) => (
-      <li key={item.card.info.id}>
-        {item.card.info.name} - Rs.{" "}
-        {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
-      </li>
-    ))}
-  </ul>
-)}
-
+      </p>
+    
     </div>
   );
 };
