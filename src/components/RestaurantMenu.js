@@ -34,7 +34,7 @@ const RestaurantMenu = () => {
       <p className = "font-bold text-lg">
         {cuisines.join(",")} - {costForTwoMessage}
       </p>
-      {categories.map(()=>{})}
+      {categories.map((category)=> <RestaurantCategory/>)}
     
     </div>
   );
